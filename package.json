@@ -1,0 +1,22 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "artifacts/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@workspace/api-server",
+    "build": "npm run build --workspace=@workspace/steamshare && npm run build --workspace=@workspace/api-server",
+    "start": "npm run start --workspace=@workspace/api-server",
+    "lint": "tsc --build",
+    "typecheck": "tsc --build"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.3"
+  }
+}
